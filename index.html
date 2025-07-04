@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar CSS dari Dasar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <!-- Splash Screen -->
+    <div class="splash-screen">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo" class="splash-logo" />
+    </div>
+
+    <!-- Konten Utama -->
+    <div class="page-container">
+    <!-- isi layout utamamu -->
+    </div>
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3 id="sidebar-header">Belajar CSS</h3>
+            </div>
+            <ul>
+                <li><a href="#pengantar">Pengantar</a></li>
+                <li><a href="#konsep-dasar">Konsep Dasar</a></li>
+                <li><a href="#selector">Selector</a></li>
+                <li><a href="#properti">Properti</a></li>
+            </ul>   
+        </nav>
+
+        <main class="content">
+            <header>
+                <h1 class="top-header">Masterclass CSS</h1>
+                <p>Panduan Anda untuk Menata Web dengan Indah</p>
+                <p>Bab ini akan menjadi gerbang awal Anda untuk memahami salah satu teknologi inti dalam pengembangan web. Kita akan mengupas tuntas apa itu CSS, perannya, dan bagaimana cara kerjanya dalam mempercantik tampilan sebuah situs web.</p>
+            </header>
+
+            <article>
+                <section id="pengantar">
+                    <h2>Apa itu CSS?</h2>
+                    <h3>Pengertian CSS dan fungsinya dalam web </h3>
+                    <p>CSS adalah singkatan dari Cascading Style Sheets. Secara sederhana, CSS adalah bahasa yang digunakan untuk mendeskripsikan dan mengatur tampilan visual dari sebuah halaman web. Jika HTML (HyperText Markup Language) bertugas membangun struktur atau kerangka sebuah halaman—seperti menentukan mana yang menjadi judul, paragraf, atau gambar—maka CSS-lah yang memberikan gaya pada struktur tersebut.</p>
+                        <p>Fungsi utama CSS meliputi: </p>
+                        <ul>
+                            <li><strong>Tata Letak (Layout):</strong> Mengatur posisi elemen-elemen di halaman, seperti membuat kolom, header, footer, dan sidebar.</li>
+                            <li><strong>Pengaturan Warna dan Font:</strong> Dengan CSS, kita bisa mengubah warna teks, latar belakang, dan jenis font yang digunakan.</li>
+                            <li><strong>Responsif:</strong> CSS mendukung desain responsif, yang memungkinkan halaman web terlihat baik di berbagai perangkat, dari desktop hingga smartphone.</li>
+                        </ul>
+                    <p>Dengan CSS, Anda bisa mengubah situs web yang tadinya hanya berupa teks hitam-putih menjadi sebuah karya visual yang menarik dan mudah digunakan.</p>
+                </section>
+
+                <section>
+                    <h3>Peran CSS dalam arsitektur front-end </h3>
+                    <p>Dalam pengembangan front-end, CSS berperan sebagai layer presentasi, yaitu bagian yang mengatur bagaimana konten ditampilkan kepada pengguna. CSS bekerja bersama HTML (struktur konten) dan JavaScript (interaktivitas). Dengan CSS, pengembang dapat menciptakan pengalaman pengguna (UI/UX) yang lebih responsif dan modern.</p>
+                    <p>Dalam arsitektur front-end (bagian dari aplikasi web yang berinteraksi langsung dengan pengguna), terdapat tiga pilar utama: </p>
+                    <ul>
+                        <li><strong>HTML (HyperText Markup Language):</strong> Menyediakan struktur dasar dari halaman web, seperti teks, gambar, dan tautan.</li>
+                        <li><strong>CSS (Cascading Style Sheets):</strong> Mengatur gaya visual dari elemen-elemen HTML, seperti warna, ukuran font, dan tata letak.</li>
+                        <li><strong>JavaScript:</strong> Menambahkan interaktivitas dan dinamika pada halaman web, seperti animasi, validasi form, dan manipulasi DOM.</li>
+                    </ul>
+                    <p>Peran CSS sangat krusial karena ia memisahkan antara konten (HTML) dengan presentasi (CSS). Pemisahan ini membuat kode lebih rapi, mudah dikelola, dan efisien. Seorang pengembang dapat mengubah seluruh tampilan situs hanya dengan mengubah file CSS, tanpa perlu menyentuh struktur HTML-nya sama sekali. </p>
+                </section>  
+
+                <section>
+                    <h3>Perbandingan CSS dengan HTML</h3>
+                    <p>Untuk memahaminya lebih mudah, mari kita gunakan analogi membangun rumah:</p>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <td>Aspek</td>
+                                <td>HTML</td>
+                                <td>CSS</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fungsi</td>
+                                <td>Membangun struktur rumah (dinding, atap, pintu)</td>
+                                <td>Menghias rumah (cat dinding, memilih furnitur)</td>
+                            </tr>
+                            <tr>
+                                <td>Contoh</td>
+                                <td>Tag HTML seperti &lt;h1&gt;, &lt;p&gt;, &lt;img&gt;</td>
+                                <td>Aturan CSS seperti color, font-size, margin</td>
+                            </tr>
+                            <tr>
+                                <td>Interaksi</td>
+                                <td>Menentukan apa yang ada di halaman</td>
+                                <td>Menentukan bagaimana tampilannya</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Singkatnya, HTML adalah tentang apa kontennya, sedangkan CSS adalah tentang bagaimana tampilan kontennya. Keduanya bekerja sama untuk menciptakan halaman web yang fungsional dan menarik secara visual.</p>
+                </section>  
+
+                <hr>
+
+                <section>
+                    <h2>Struktur dan Sintaks CSS</h2>
+                    <h3>Struktur penulisan: selector, property, value</h3>
+                    <p>Setiap aturan CSS pada dasarnya terdiri dari dua bagian utama: selector dan declaration block.</p>
+                    <pre><code>
+selector { 
+    property: value; 
+} 
+                    </code></pre>
+                    <ul>
+                        <li><strong>Selector:</strong> Bagian ini menentukan elemen HTML mana yang akan diberi gaya. Misalnya, jika Anda ingin mengubah warna teks pada semua paragraf, Anda akan menggunakan selector &lt;p&gt;.</li>
+                        <li><strong>Property:</strong> Ini adalah atribut yang ingin Anda ubah. Contohnya, 'color' untuk mengubah warna teks atau 'font-size' untuk mengubah ukuran font.</li>
+                        <li><strong>Value:</strong> Nilai yang diberikan pada properti tersebut. Misalnya, 'red' untuk warna merah atau '16px' untuk ukuran font 16 piksel.</li>
+                            <ul>
+                                <li><strong>Selector:</strong> Bagian ini menentukan elemen HTML mana yang akan diberi gaya. Misalnya, jika Anda ingin mengubah warna teks pada semua paragraf, Anda akan menggunakan selector &lt;p&gt;.</li>
+                                <li><strong>Property:</strong> Ini adalah atribut yang ingin Anda ubah. Contohnya, 'color' untuk mengubah warna teks atau 'font-size' untuk mengubah ukuran font.</li>
+                                <li><strong>Value:</strong> Nilai yang diberikan pada properti tersebut. Misalnya, 'red' untuk warna merah atau '16px' untuk ukuran font 16 piksel.</li>
+                            </ul>
+                    </ul>
+                </section>
+                
+                <section id="Cara Menulis CSS">
+                    <h2>Cara Menulis CSS</h2>
+                    <h3>Tiga Cara Penulisan CSS</h3>
+                    <h4>Inline CSS: definisi, kelebihan & kekurangan</h4>
+                    <p>Inline CSS ditulis langsung di dalam tag HTML menggunakan atribut <code>style</code>. Metode ini hanya akan memengaruhi elemen spesifik di mana ia diterapkan.</p>
+                    <ul>
+                        <li><strong>Definsi:</strong>Aturan CSS ditempatkan di dalam atribut style dari sebuah elemen HTML. </li>
+                        <li><strong>Kelebihan:</strong>
+                            <ul>
+                                <li><strong>Cepat untuk pengujian:</strong> Sangat berguna untuk menguji atau menerapkan gaya unik pada satu elemen dengan cepat. </li>
+                                <li><strong>Prioritas tertinggi:</strong> Aturan inline memiliki spesifisitas tertinggi, artinya akan menimpa aturan dari internal maupun external stylesheet. </li>
+                            </ul>
+                        </li>
+                        <li><strong>Kekurangan:</strong> 
+                            <ul>
+                                <li><strong>Sulit dikelola: </strong> Menjadikan pemeliharaan situs web yang besar menjadi sulit karena perubahan harus dilakukan pada setiap elemen satu per satu.  </li>
+                                <li><strong>Mencampur struktur dan presentasi: </strong> Mengaburkan pemisahan antara konten (HTML) dan desain (CSS), yang dianggap sebagai praktik yang kurang baik.  </li>
+                                <li><strong>Tidak dapat digunakan kembali: </strong> Gaya tidak dapat diterapkan kembali ke elemen lain tanpa menyalin kode yang sama berulang kali.  </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Contoh penggunaan inline CSS:</p>
+                    <pre><code>&lt;p style="color: red; font-size: 20px;"&gt;Ini adalah paragraf dengan inline CSS.&lt;/p&gt;</code></pre>
+                </section>
+
+                <section>
+                    <h3>Internal CSS: penggunaan dalam satu file HTML</h3>
+                    <p>Internal CSS (atau embedded CSS) didefinisikan di dalam tag <code>style</code> yang ditempatkan di bagian <code>head</code> dari sebuah file HTML. Metode ini memengaruhi semua elemen yang sesuai di dalam satu halaman tersebut.</p>
+                    <ul>
+                        <li><strong>Penggunaan dalam satu file HTML: </strong> Aturan CSS ditulis di dalam tag &lt;style&gt; yang berada di dalam bagian &lt;head&gt; dari dokumen HTML. Gaya yang didefinisikan di sini hanya berlaku untuk halaman tersebut.</li>
+                        <li><strong>Kelebihan:</strong>
+                            <ul>
+                                <li><strong>Berguna untuk gaya per halaman:</strong> 
+                                    <ul>
+                                        <li>Ideal ketika sebuah halaman tunggal memerlukan gaya yang unik dan tidak akan digunakan di halaman lain.</li>
+                                        <li>Meningkatkan keterbacaan kode dengan memisahkan gaya dari struktur HTML.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Kekurangan:</strong>
+                            <ul>
+                                <li><strong>Hanya berlaku untuk satu halaman:</strong> Tidak efisien jika gaya yang sama perlu diterapkan di beberapa halaman, karena kode CSS harus disalin ke setiap halaman.</li>
+                                <li><strong>Memperbesar ukuran file HTML:</strong> Menambah ukuran file HTML, yang dapat sedikit memengaruhi waktu muat halaman.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Contoh penggunaan internal CSS:</p>
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    body {
+      background-color: lightgray;
+    }
+    h1 {
+      color: navy;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Judul Ini Berwarna Navy&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>                         
+                </section>
+
+                <section>
+                    <h3>External CSS (Fokus utama): penulisan file .css, cara link di HTML</h3>
+                    <p>External CSS adalah metode di mana aturan CSS ditulis dalam file terpisah dengan ekstensi .css. File ini kemudian dihubungkan ke file HTML menggunakan tag <code>link</code> di bagian <code>head</code>.</p>
+                    <ul>
+                        <li><strong>Penulisan file .css:</strong> Anda membuat sebuah file baru (misalnya, style.css) dan menulis semua aturan CSS Anda di dalamnya tanpa tag HTML apa pun.</li>
+                    </ul>
+                    <p>Contoh penulisan file style.css:</p>
+                    <pre><code>
+body { 
+  font-family: Arial, sans-serif; 
+  background-color: #f4f4f4; 
+} 
+
+h1 { 
+  color: #333; 
+}        
+                    </code></pre>
+                    <ul>
+                        <li><strong>Cara link di HTML:</strong> File CSS eksternal dihubungkan ke dalam dokumen HTML menggunakan tag &lt;link&gt; di dalam bagian &lt;head&gt;. Atribut rel="stylesheet" memberi tahu browser bahwa ini adalah file stylesheet, dan href menentukan lokasi file .css tersebut. </li>
+                </section>
+
+                <section id="praktik-tambahan">
+    <h2>Praktik Tambahan: Float, Inline-block, dan Responsive</h2>
+
+    <h3>Contoh Float</h3>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="Logo CSS Float" class="float-left">
+    <p>Gambar di atas menggunakan properti <code>float: left</code>, sehingga paragraf ini mengalir di sebelah kanan gambar tersebut.</p>
+    <div style="clear: both;"></div>
+
+    <h3>Contoh Display: inline-block</h3>
+    <div class="inline-box">Box 1</div>
+    <div class="inline-box">Box 2</div>
+    <div class="inline-box">Box 3</div>
+
+    <h3>Responsive Media Query</h3>
+    <p class="responsive-text">Ubah ukuran jendela browser untuk melihat perubahan gaya teks ini berdasarkan lebar layar (media query).</p>
+</section>
+
+                
+            </article>
+
+            <footer>
+                <p>© 2025 Belajar CSS. Dibuat dengan penuh semangat.</p>
+            </footer>
+        </main>
+    </div>
+
+</body>
+</html>
